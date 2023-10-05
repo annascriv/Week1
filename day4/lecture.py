@@ -128,3 +128,68 @@ print("young".replace("ng","th"))
 last_name='scriven'
 print(last_name.capitalize())
 
+#lamda functions
+
+def say_hello(name):
+    print(f"hello {name}")
+
+def say_hello_extra(name,other_hello_function):
+    print(f"hi {name}")
+    other_hello_function(name)
+
+say_hello_extra("Robert", say_hello)
+
+
+## parameters can be anything, they are just placeholders for arguments that are passed into the function
+
+def add_one(x):
+    return x + 1
+
+add_two = lambda x : x + 2
+
+print(add_two(5))
+
+say_hi = lambda name : f"hello {name}"
+
+say_hello_extra = ("Bob", say_hi)
+
+#map function: maps an item from one list to a new item in a new list
+new_list = map(lambda item : item + 2, my_list)
+print(new_list)
+
+# for x in new_list: 
+#     print(x)
+
+my_list = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]
+new_list_divisible_by_three = filter(lambda item : item%3 == 0, my_list)
+
+print(list(new_list_divisible_by_three))
+
+#reduce function (also a sort function but skipped it)
+
+a_list = [1,2,3,4,5,6,7,8,9,10]
+
+words = ["hello", "world","it's","sunny"]
+
+import functools
+sentence = functools.reduce(lambda agg, item : f"{agg} {item}", words)
+
+
+#modules: from <file_one> import <name>
+
+import filetwo
+my_var = 5
+print(my_var)
+
+filetwo.hello()
+print(filetwo.my_var)
+print(my_var)
+
+#reading and writing files
+
+# import os 
+
+# abs_path_to_file = os.path.abspath()
+
+#try & except error handling
+
